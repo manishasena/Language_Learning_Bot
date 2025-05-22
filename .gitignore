@@ -1,6 +1,8 @@
 /AWS
 /ChatGPT_suggestion.py
 /japanese_audio_inputs
+/requirements.txt
+/environment.yml
 /1.0_record_from_microphone.py
 /2.0_audio_to_text.py
 /3.0_llm.py
