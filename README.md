@@ -17,4 +17,4 @@ numpy
 3. Run:
 `python record_and_play_devices.py`
 
-![Language Bot Framework](Documentation/LanguageBotFramework.jpg)
+![Language Bot Framework](Documentation/LanguageBotFramework.png)
