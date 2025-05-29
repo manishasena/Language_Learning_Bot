@@ -1,0 +1,11 @@
+---
+# Language Chat Bot Parameters
+name: "Language Chat Bot"
+shared_dir: "/app/shared" #"./shared_audio" #
+INPUT_FILE: "/app/shared/input.wav"
+OUTPUT_FILE: "/app/shared/output.txt"
+CONVERSATION_HISTORY: "/app/shared/conversation_history.txt"
+language: "Japanese"
+whisper_model: "base"
+OllamaLLM_model: "gemma3:1b"
+hiragana: True

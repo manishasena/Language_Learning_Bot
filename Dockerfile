@@ -1,19 +1,12 @@
 
-FROM python:3.11
+FROM python:3.11-slim
 
-ADD Desktop_version/main.py .
+COPY chat_bot.py /app/chat_bot.py
+COPY parameters.yml /app/parameters.yml
 
-RUN pip install wave openai-whisper langchain langchain-ollama pyttsx3 pykakasi
-RUN apt-get update
-RUN apt-get install libportaudio2 libportaudiocpp0 portaudio19-dev libasound-dev libsndfile1-dev -y 
-RUN apt-get install -y gcc g++
-RUN pip3 install pyaudio
+RUN pip install wave openai-whisper langchain langchain-ollama pykakasi PyYAML
+RUN apt-get update && apt-get install -y ffmpeg
 
-CMD ["python", "main.py"]
+WORKDIR /app
 
-# Build
-# docker build -t language_bot .
-
-# Run
-# docker run -i -t language_bot
-# docker run -it --device /dev/snd language_bot
+CMD ["python", "-u", "chat_bot.py"]

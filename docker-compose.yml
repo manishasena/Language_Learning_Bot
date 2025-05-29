@@ -1,0 +1,22 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+  chatbot:
+    build: .
+    depends_on:
+      - ollama
+    volumes:
+      #- ./shared_audio:/app/shared
+      - /Users/manisha/Library/CloudStorage/OneDrive-Personal/SaM/Projects/02_Language_Bot/shared_audio:/app/shared
+    environment:
+      - OLLAMA_URL=http://host.docker.internal:11434 #- OLLAMA_URL=http://ollama:11434
+
+volumes:
+  ollama_data:
